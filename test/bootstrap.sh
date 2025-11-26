@@ -24,7 +24,6 @@ set -euo pipefail
 #                                                                   #
 # 1 SCRIPT PERMISSIONS AND DEPENDENCY CHECKS                        #
 #                                                                   #
-#  1.1   CHECK SCRIPT PERMISSIONS                                   #
 #  1.2   SCRIPT CONSTANTS                                           #
 #  1.3   DEFINE THE REQUIRED SCRIPT AND TEST DEPENDENCIES           #
 #  1.4   CHECK THE REQUIRED SCRIPT AND TEST DEPENDENCIES            #
@@ -90,19 +89,14 @@ declare -a -r BOOTSTRAP_SCRIPT_AND_TEST_FILE_REQUIRED_DEPENDENCIES=(
   "awk"
   "column"
   "cut"
-  #"dovecot"
   "echo"
-  #"exim"
   "expect"
   "grep"
   "head"
   "mariadb"
-  #"named"
-  "nslookup"
   "printf"
   "sed"
   "sort"
-  "swaks"
   "wc"
   "xargs"
 )
@@ -111,7 +105,7 @@ declare -a -r BOOTSTRAP_SCRIPT_AND_TEST_FILE_REQUIRED_DEPENDENCIES=(
 #                                                                   #
 # 1.4 CHECK THE REQUIRED SCRIPT AND TEST DEPENDENCIES               #
 #                                                                   #
-####################################################################:#
+#####################################################################
 
 declare required_dependency
 

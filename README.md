@@ -1,4 +1,4 @@
-# ecodev-exim-db
+# nova-db
 
-mysql -h localhost -P 3306 --protocol=tcp -u root -p
+## Under development
 

@@ -13,7 +13,7 @@ IFS=$'\n\t'
 #                                                                   #
 # Date:    10th May 2025                                            #
 #                                                                   #
-# Author:  admin <admin@ecodev>                                  #
+# Author:  admin <admin@ecodev>                                     #
 #                                                                   #
 #####################################################################
 

@@ -1,5 +1,5 @@
 {
-  "ignorePaths": [".git", ".github", "node_modules", "./sql/*insert*.sql"],
+  "ignorePaths": [".git", ".github", "node_modules", "./sql/*insert*.sql", "./test/sanity/*"],
   "language": "en-gb",
   "languageSettings": [
     {

@@ -26,8 +26,8 @@ services:
     environment:
       MARIADB_DATABASE: ${NOVA_DB__NAME}
       MARIADB_ROOT_PASSWORD: ${NOVA_DB__USER__ROOT_PASS}
-      MARIADB_ROOT_USER: ${NOVA_DB__USER__ROOT}
-      MARIADB_USERNAME: ${NOVA_DB__USER__STD}
+      MARIADB_USER: ${NOVA_DB__USER__STD}
+      MARIADB_PASSWORD: ${NOVA_DB__USER__STD_PASS}
     healthcheck:
       interval: 10s
       start_period: 30s

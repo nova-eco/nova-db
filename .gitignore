@@ -6,7 +6,7 @@
 #                                                                   #
 # Date:    11th May 2025                                            #
 #                                                                   #
-# Author:  nova admin <admin@nova>                              #
+# Author:  nova admin <admin@nova>                                  #
 #                                                                   #
 #####################################################################
 
@@ -22,11 +22,6 @@
 .out
 .rds
 .swp
-
-#
-# Files to be ignored
-#
-sql/exim_db.sql
 
 #
 # Hidden files to be ignored
