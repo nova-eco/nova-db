@@ -2,7 +2,7 @@
   "name": "@nova/nova-db",
   "description": "nova db",
   "version": "0.8.0",
-  "private": true,
+  "private": false,
   "homepage": "https://nova.eco",
   "repository": {
     "type": "git",
@@ -20,11 +20,10 @@
     "npm": ">=10.9.4"
   },
   "scripts": {
-    "build": "pnpm build:only",
-    "build:only": "pnpm build:certs",
-    "build:bashunit": "./scripts/bashunit_load.sh",
     "changelog": "npx auto-changelog",
+    "changelog:commit": "git commit -m 'ci: update changelog' --no-verify",
     "check": "npm run format && npm run lint && npm run spell",
+    "commit-msg": "commitlint --edit",
     "docker": "npm run docker:only",
     "docker:has": "bash -c 'command -v docker'",
     "docker:only": "npm run docker:start",
@@ -42,6 +41,8 @@
     "lint:docker:compose": "docker compose config",
     "lint:only": "npm run lint:docker",
     "postinstall": "npm run env:cp",
+    "prepare": "husky",
+    "pre-push": "npm run check",
     "predocker": "npm run docker:has",
     "spell": "npm run spell:only",
     "spell:only": "npx cspell .",
@@ -51,12 +52,14 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/format": "^20.0.0",
     "auto-changelog": "^2.5.0",
+    "commitlint": "^20.1.0",
     "cspell": "^9.0.1",
+    "husky": "^9.1.7",
     "prettier": "^3.6.2",
     "prettier-plugin-sh": "^0.17.4",
     "prettier-plugin-sort-json": "^4.1.1",
-    "prettier-plugin-sql": "^0.19.2",
-    "sql-lint": "^1.0.0"
+    "prettier-plugin-sql": "^0.19.2"
   }
 }
