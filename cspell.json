@@ -1,0 +1,35 @@
+{
+  "ignorePaths": [".git", ".github", "node_modules", "./sql/*insert*.sql"],
+  "language": "en-gb",
+  "languageSettings": [
+    {
+      "languageId": "bash, javascript, json, sql"
+    }
+  ],
+  "version": "0.2",
+  "words": [
+    "bashunit",
+    "BUILDKIT",
+    "ecodev",
+    "ECODEV",
+    "EXIM",
+    "exim",
+    "healthcheck",
+    "innodb",
+    "initdb",
+    "lindex",
+    "maildir",
+    "mariadbd",
+    "mysqld",
+    "noninteractive",
+    "nslookup",
+    "NXDOMAIN",
+    "postformat",
+    "shellcheck",
+		"swaks",
+		"TLSC",
+    "tuplen",
+    "VARS",
+    "vars"
+  ]
+}

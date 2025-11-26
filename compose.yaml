@@ -1,0 +1,38 @@
+#####################################################################
+#                                                                   #
+# Script:  compose.yaml                                             #
+#                                                                   #
+# Purpose: Docker compose definition for nova-db                    #
+#                                                                   #
+# Date:    11th May 2025                                            #
+#                                                                   #
+# Author:  nova admin <admin@nova>                                  #
+#                                                                   #
+#####################################################################
+
+services:
+  nova-db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NOVA_DB__AUTHOR: ${NOVA_DB__AUTHOR}
+        NOVA_DB__SQL__FILE: ${NOVA_DB__SQL__FILE}
+        NOVA_DB__SQL__PATH: ${NOVA_DB__SQL__PATH}
+    container_name: ${NOVA_DB__CONTAINER_NAME}
+    env_file:
+      - path: ./.env
+        required: true
+    environment:
+      MARIADB_DATABASE: ${NOVA_DB__NAME}
+      MARIADB_ROOT_PASSWORD: ${NOVA_DB__USER__ROOT_PASS}
+      MARIADB_ROOT_USER: ${NOVA_DB__USER__ROOT}
+      MARIADB_USERNAME: ${NOVA_DB__USER__STD}
+    healthcheck:
+      interval: 10s
+      start_period: 30s
+      test: ['CMD', 'healthcheck.sh', '--connect', '--innodb_initialized']
+      timeout: 5s
+    ports:
+      - ${NOVA_DB__PORT}:${NOVA_DB__PORT}
+    restart: unless-stopped

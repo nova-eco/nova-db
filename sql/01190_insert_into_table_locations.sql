@@ -1,0 +1,35 @@
+USE nova;
+
+/*
+ * @script     01190_insert_into_table_locations.sql
+ *
+ * @created    26th November 2025
+ * @author     admin <admin@nova.eco>
+ */
+INSERT INTO `locations` (id, geoCityId, postcode, created, modified, addressLineOne, addressLineTwo, addressLineThree) VALUES
+('03ab583a-c6d6-40ad-b2a8-ae435bc54d44','0470fb41-69eb-4648-8e70-45c51399d62a','ABXDYF','2025-11-15 22:32:47','2025-11-15 22:32:47','ABXDYF','ABXDYF',NULL),
+('0bf6cdc9-639d-4616-8430-483a28e014e0','60afe740-a3f7-4503-8c29-f852548ea4fe','RSTRST','2025-11-16 02:20:37','2025-11-16 02:20:37','RSTRST','RSTRST',NULL),
+('0c9f8a63-1da4-433a-bafc-54fcb14fd02e','60afe740-a3f7-4503-8c29-f852548ea4fe','AZBXYA','2025-11-15 13:24:29','2025-11-15 13:24:29','ABCDEF','ABCDEF',NULL),
+('3830236a-1726-4c85-be27-c1f66bc91ada','60afe740-a3f7-4503-8c29-f852548ea4fe','EH75HL','2025-11-12 07:24:39','2025-11-15 12:13:10','Cowgate','ABCD',NULL),
+('3936980d-e2b0-454e-9cc6-2fb94c5b4941','0470fb41-69eb-4648-8e70-45c51399d62a','GH12SS','2025-11-17 19:20:50','2025-11-17 19:20:50','Charlotte Street','Kelvinside',NULL),
+('3a18329e-6203-4bfd-9644-a89483a1752f','60afe740-a3f7-4503-8c29-f852548ea4fe','EHAAAA','2025-11-15 13:04:20','2025-11-15 13:04:20','ADD1','ADD2',NULL),
+('5072e1a1-0f10-4e91-80d8-5b4bf45508f8','0470fb41-69eb-4648-8e70-45c51399d62a','BCDEFG','2025-11-15 22:28:14','2025-11-15 22:28:14','BCDEFG','BCDEFG',NULL),
+('515cdb52-52a2-44d6-9e28-04996b593f84','60afe740-a3f7-4503-8c29-f852548ea4fe','bCDBCD','2025-11-15 13:10:46','2025-11-15 13:10:46','Address 1','Address 2',NULL),
+('632133cd-747c-486b-9190-7dccfa2f1dcf','60afe740-a3f7-4503-8c29-f852548ea4fe','jjjkkk','2025-11-16 00:07:22','2025-11-16 00:07:22','jjjkkk','jjjkkk',NULL),
+('63dae005-9813-4c9f-b1b8-3744a213a4a4','60afe740-a3f7-4503-8c29-f852548ea4fe','ccbbdd','2025-11-16 00:26:42','2025-11-16 00:26:42','ccbbdd','ccbbdd',NULL),
+('66c5fced-f145-4f71-acbe-ba1bae95a698','60afe740-a3f7-4503-8c29-f852548ea4fe','AAAAAA','2025-11-15 12:58:32','2025-11-15 12:58:32','My new address part 1','My new address part 2',NULL),
+('70b3c29e-9531-443f-82a9-33bb5415d0b6','60afe740-a3f7-4503-8c29-f852548ea4fe','ZOOBEE','2025-11-16 15:50:00','2025-11-16 15:50:00','ZOOBEE','ZOOBEE',NULL),
+('85a17325-b9ea-43eb-9cd3-0faa9015c17b','0470fb41-69eb-4648-8e70-45c51399d62a','cccddd','2025-11-16 00:29:17','2025-11-16 00:29:17','cccddd','cccddd',NULL),
+('87a3f01b-fa11-45c7-bfab-959f0ead056c','0470fb41-69eb-4648-8e70-45c51399d62a','ABXUP2','2025-11-15 13:29:46','2025-11-15 13:29:46','ABXUP','ABXUP',NULL),
+('8a14f5c5-aa62-408d-b05e-aab98842dcbc','0470fb41-69eb-4648-8e70-45c51399d62a','uuurrr','2025-11-16 00:11:47','2025-11-16 00:11:47','uuurrr','uuurrr',NULL),
+('9848224f-f6ce-4b4b-93f9-5ab85933cfa4','60afe740-a3f7-4503-8c29-f852548ea4fe','ABCABC','2025-11-15 13:08:27','2025-11-15 13:08:27','ABCD1','ABCD2',NULL),
+('9bbf4e00-63e3-4d8f-8980-a0a02b3a8306','60afe740-a3f7-4503-8c29-f852548ea4fe','mmllgg','2025-11-16 00:09:47','2025-11-16 00:09:47','mmllgg','mmllgg',NULL),
+('a7b43480-bc78-4e15-a10f-0bc2adb3bb90','60afe740-a3f7-4503-8c29-f852548ea4fe','HJKLDC','2025-11-15 13:37:17','2025-11-15 13:37:17','HJKLDC','HJKLDC',NULL),
+('a9b0feeb-ffa9-4ba4-86a9-3ca937b221f6','0470fb41-69eb-4648-8e70-45c51399d62a','ABCDEA','2025-11-15 13:34:40','2025-11-15 13:34:40','ABCDEA','ABCDEA',NULL),
+('ad3eb5c4-2301-491c-a7f7-49ef6d2d10e5','60afe740-a3f7-4503-8c29-f852548ea4fe','PPPQQQ','2025-11-16 00:40:51','2025-11-16 00:40:51','PPPQQQ','PPPQQQ',NULL),
+('be9f4891-672d-4672-8ba1-0b48bb6faf05','60afe740-a3f7-4503-8c29-f852548ea4fe','qqqrrr','2025-11-16 00:34:29','2025-11-16 00:34:29','qqqrrr','qqqrrr',NULL),
+('dd46be99-5e07-4413-bbf5-6776bed8ee05','60afe740-a3f7-4503-8c29-f852548ea4fe','EH27AH','2025-11-17 19:24:09','2025-11-17 19:24:09','Constitution Street','Leith',NULL),
+('e4ea96bf-ed06-42f5-b827-2f1ec0a4a4eb','60afe740-a3f7-4503-8c29-f852548ea4fe','GK12AT','2025-11-12 07:24:39','2025-11-15 12:10:46','ABC','DEF',NULL),
+('eefe68e1-7dbf-43aa-9bc1-fc54be863a78','60afe740-a3f7-4503-8c29-f852548ea4fe','ABCXYZ','2025-11-15 13:16:31','2025-11-15 13:16:31','XYZ','XYZ',NULL),
+('f1ae4943-e54a-4b7f-8b1d-04790a36f545','60afe740-a3f7-4503-8c29-f852548ea4fe','rrggdd','2025-11-16 00:17:20','2025-11-16 00:17:20','rrggdd','rrggdd',NULL),
+('f41707ba-e8ca-46a0-b14c-a308ccde0be1','60afe740-a3f7-4503-8c29-f852548ea4fe','mnbgtx','2025-11-16 00:04:55','2025-11-16 00:04:55','mnbgtx','mnbgtx',NULL);
