@@ -30,9 +30,15 @@ ARG NOVA_DB__SQL__PATH
 
 # Build-time database configuration for pre-seeding
 ARG MARIADB_DATABASE=nova
-ARG MARIADB_ROOT_PASSWORD=build_temp_pass
+ARG MARIADB_ROOT_PASSWORD=pass
 ARG MARIADB_USER=nova_api
-ARG MARIADB_PASSWORD=build_temp_pass
+ARG MARIADB_PASSWORD=nova_api_pass
+
+# Make build args available at runtime as environment variables
+ENV MARIADB_DATABASE=${MARIADB_DATABASE}
+ENV MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+ENV MARIADB_USER=${MARIADB_USER}
+ENV MARIADB_PASSWORD=${MARIADB_PASSWORD}
 
 LABEL authors=${NOVA_DB__AUTHOR}
 
