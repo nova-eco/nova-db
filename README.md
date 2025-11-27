@@ -68,15 +68,7 @@ feature requests.
 
 3. **Configure environment variables:**
 
-   Edit the `.env` file and set the required variables:
-
-   ```bash
-   NOVA_DB__NAME="your-database-name"
-   NOVA_DB__USER__ROOT_PASS="your-root-password"
-   NOVA_DB__USER__STD="your-username"
-   NOVA_DB__USER__STD_PASS="your-password"
-   NOVA_DB__NETWORK="your-network-name"
-   ```
+   Edit the `.env` file and set the required variables. See the [Environment Variables](#environment-variables) section for details.
 
 ### Usage
 
@@ -122,6 +114,45 @@ npm run docker:stop  # Stop containers and clean up
 
 **Note**: The `start` command includes quality checks before starting Docker. Use
 `npm run docker` if you want to skip the checks and start containers directly.
+
+## Environment Variables
+
+The nova-db package requires several environment variables for configuration. All database-related variables are prefixed with `NOVA_DB_`.
+
+### Core Database Variables
+
+| Variable | Description | Default | Used In |
+|----------|-------------|---------|---------|
+| `NOVA_DB_AUTHOR` | Author information for the package | `""` | Dockerfile (LABEL authors) |
+| `NOVA_DB_CONTAINER_NAME` | Name of the database container | `""` | Container identification |
+| `NOVA_DB_NAME` | MariaDB database name | `""` | Dockerfile (MARIADB_DATABASE environment variable) |
+| `NOVA_DB_NETWORK` | Docker network name for inter-service communication | `""` | Docker compose networking |
+| `NOVA_DB_PORT` | MariaDB database port | `""` | Port mapping in docker-compose |
+| `NOVA_DB_SQL_FILE` | SQL file pattern for initialization | `""` | Dockerfile COPY command (e.g., "*.sql") |
+| `NOVA_DB_SQL_PATH` | Path to SQL initialization files | `""` | Dockerfile COPY command source path |
+
+### User Management Variables
+
+| Variable | Description | Default | Used In |
+|----------|-------------|---------|---------|
+| `NOVA_DB_USER_ROOT` | MariaDB root username | `""` | Database administration |
+| `NOVA_DB_USER_ROOT_PASS` | MariaDB root password | `""` | Dockerfile (MARIADB_ROOT_PASSWORD) |
+| `NOVA_DB_USER_STD` | Standard MariaDB user for API access | `""` | Dockerfile (MARIADB_USER) |
+| `NOVA_DB_USER_STD_PASS` | Password for standard user | `""` | Dockerfile (MARIADB_PASSWORD) |
+
+### Variable Dependencies
+
+Several variables must match corresponding values in the nova-api configuration:
+- `NOVA_DB_NAME` should match `NOVA_API_DB_NAME`
+- `NOVA_DB_USER_STD` should match `NOVA_API_DB_USER`
+- `NOVA_DB_USER_STD_PASS` should match `NOVA_API_DB_PASSWORD`
+- `NOVA_DB_NETWORK` is shared between nova-db and nova-api services
+
+### Security Recommendations
+
+- Change `NOVA_DB_USER_ROOT_PASS` from default value in production
+- Use strong passwords for `NOVA_DB_USER_STD_PASS`
+- Keep root credentials secure and avoid using them in applications
 
 ### Database Connection
 
@@ -200,9 +231,9 @@ This project automatically publishes Docker images to GitHub Container Registry.
 
 **Image Build Arguments:**
 
-- `NOVA_DB__AUTHOR`: Image author metadata
-- `NOVA_DB__SQL__FILE`: SQL initialization file name
-- `NOVA_DB__SQL__PATH`: Path to SQL files directory
+- `NOVA_DB_AUTHOR`: Image author metadata
+- `NOVA_DB_SQL_FILE`: SQL initialization file pattern
+- `NOVA_DB_SQL_PATH`: Path to SQL files directory
 
 ### Triggering Downstream Deployments
 

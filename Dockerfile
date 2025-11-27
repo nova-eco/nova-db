@@ -24,9 +24,9 @@
 
 FROM mariadb:lts-noble
 
-ARG NOVA_DB__AUTHOR
-ARG NOVA_DB__SQL__FILE
-ARG NOVA_DB__SQL__PATH
+ARG NOVA_DB_AUTHOR
+ARG NOVA_DB_SQL_FILE
+ARG NOVA_DB_SQL_PATH
 
 # Build-time database configuration for pre-seeding
 ARG MARIADB_DATABASE=nova
@@ -40,11 +40,11 @@ ENV MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
 ENV MARIADB_USER=${MARIADB_USER}
 ENV MARIADB_PASSWORD=${MARIADB_PASSWORD}
 
-LABEL authors=${NOVA_DB__AUTHOR}
+LABEL authors=${NOVA_DB_AUTHOR}
 
 # Copy initialization script and SQL files
 COPY scripts/init-database.sh /usr/local/bin/init-database.sh
-COPY ${NOVA_DB__SQL__PATH}/${NOVA_DB__SQL__FILE} /docker-entrypoint-initdb.d/
+COPY ${NOVA_DB_SQL_PATH}/${NOVA_DB_SQL_FILE} /docker-entrypoint-initdb.d/
 
 # Pre-seed the database during build
 # This runs MariaDB, initializes it with the SQL scripts, then stops it
