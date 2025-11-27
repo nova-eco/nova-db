@@ -1,4 +1,0 @@
-# nova-db
-
-## Under development
-

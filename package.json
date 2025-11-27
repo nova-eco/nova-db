@@ -3,28 +3,28 @@
   "description": "nova db",
   "version": "0.8.0",
   "private": false,
-  "homepage": "https://nova.eco",
+  "homepage": "https://github.com/nova-eco",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nova.git"
+    "url": "git+https://github.com/nova-eco/nova-deploy.git"
   },
   "keywords": [
     "@nova",
     "db",
-    "mariadb",
     "sql"
   ],
   "author": "nova admin <admin@nova.eco>",
+  "packageManager": "npm@10",
   "engines": {
-    "node": ">=22",
-    "npm": ">=10.9.*"
+    "node": ">=21",
+    "npm": ">=10"
   },
   "scripts": {
-    "changelog": "npx auto-changelog",
+    "changelog": "auto-changelog",
     "changelog:commit": "git commit -m 'ci: update changelog' --no-verify",
     "check": "npm run format && npm run lint && npm run spell",
     "commit-msg": "commitlint --edit",
-    "docker": "npm run docker:only",
+		"docker": "npm run docker:only",
     "docker:has": "bash -c 'command -v docker'",
     "docker:only": "npm run docker:start",
     "docker:start": "docker compose up --build --force-recreate",
