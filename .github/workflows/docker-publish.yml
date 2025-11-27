@@ -2,7 +2,7 @@
 #                                                                   #
 # Workflow: docker-publish.yml                                      #
 #                                                                   #
-# Purpose:  Build and publish Docker image to GitHub Container     #
+# Purpose:  Build and publish Docker image to GitHub Container      #
 #           Registry when changes are merged to master              #
 #                                                                   #
 # Author:   nova admin <admin@nova.eco>                             #
@@ -61,9 +61,9 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            NOVA_DB__AUTHOR=${{ vars.NOVA_DB__AUTHOR || 'nova admin <admin@nova.eco>' }}
-            NOVA_DB__SQL__FILE=${{ vars.NOVA_DB__SQL__FILE || 'init.sql' }}
-            NOVA_DB__SQL__PATH=${{ vars.NOVA_DB__SQL__PATH || './sql' }}
+            NOVA_DB__AUTHOR=${{ vars.NOVA_DB__AUTHOR }}
+            NOVA_DB__SQL__FILE=${{ vars.NOVA_DB__SQL__FILE }}
+            NOVA_DB__SQL__PATH=${{ vars.NOVA_DB__SQL__PATH }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
