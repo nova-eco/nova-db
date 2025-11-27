@@ -16,8 +16,8 @@
   ],
   "author": "nova admin <admin@nova.eco>",
   "engines": {
-    "node": ">=22.11.1",
-    "npm": ">=10.9.4"
+    "node": ">=22",
+    "npm": ">=10.9.*"
   },
   "scripts": {
     "changelog": "npx auto-changelog",
