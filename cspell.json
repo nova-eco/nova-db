@@ -12,6 +12,7 @@
     "BUILDKIT",
     "ecodev",
     "ECODEV",
+		"EOSQL",
     "EXIM",
     "exim",
     "healthcheck",
@@ -29,6 +30,8 @@
 		"swaks",
 		"TLSC",
     "tuplen",
+		"unova",
+		"uroot",
     "VARS",
     "vars"
   ]

@@ -28,7 +28,22 @@ ARG NOVA_DB__AUTHOR
 ARG NOVA_DB__SQL__FILE
 ARG NOVA_DB__SQL__PATH
 
+# Build-time database configuration for pre-seeding
+ARG MARIADB_DATABASE=nova
+ARG MARIADB_ROOT_PASSWORD=build_temp_pass
+ARG MARIADB_USER=nova_api
+ARG MARIADB_PASSWORD=build_temp_pass
+
 LABEL authors=${NOVA_DB__AUTHOR}
-COPY ${NOVA_DB__SQL__PATH}/${NOVA_DB__SQL__FILE} /docker-entrypoint-initdb.d
+
+# Copy initialization script and SQL files
+COPY scripts/init-database.sh /usr/local/bin/init-database.sh
+COPY ${NOVA_DB__SQL__PATH}/${NOVA_DB__SQL__FILE} /docker-entrypoint-initdb.d/
+
+# Pre-seed the database during build
+# This runs MariaDB, initializes it with the SQL scripts, then stops it
+# The populated database is baked into the image
+RUN chmod +x /usr/local/bin/init-database.sh && \
+    /usr/local/bin/init-database.sh
 
 CMD ["mariadbd"]

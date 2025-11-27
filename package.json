@@ -1,7 +1,7 @@
 {
   "name": "@nova/nova-db",
   "description": "nova db",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": false,
   "homepage": "https://github.com/nova-eco",
   "repository": {
@@ -37,7 +37,7 @@
     "format:only": "npm run format:check",
     "lint": "npm run lint:only",
     "lint:docker": "npm run docker:has && npm run lint:docker:dockerfile && npm run lint:docker:compose",
-    "lint:docker:dockerfile": "docker build --check .",
+    "lint:docker:dockerfile": "bash ./scripts/docker-build-check.sh",
     "lint:docker:compose": "docker compose config",
     "lint:only": "npm run lint:docker",
     "postinstall": "npm run env:cp",

@@ -19,6 +19,10 @@ services:
         NOVA_DB__AUTHOR: ${NOVA_DB__AUTHOR}
         NOVA_DB__SQL__FILE: ${NOVA_DB__SQL__FILE}
         NOVA_DB__SQL__PATH: ${NOVA_DB__SQL__PATH}
+        MARIADB_DATABASE: ${NOVA_DB__NAME}
+        MARIADB_ROOT_PASSWORD: ${NOVA_DB__USER__ROOT_PASS}
+        MARIADB_USER: ${NOVA_DB__USER__STD}
+        MARIADB_PASSWORD: ${NOVA_DB__USER__STD_PASS}
     container_name: ${NOVA_DB__CONTAINER_NAME}
     env_file:
       - path: ./.env

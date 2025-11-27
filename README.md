@@ -127,6 +127,16 @@ npm run docker:stop  # Stop containers and clean up
 
 Once the database is running, you can connect using the MariaDB client:
 
+**Verifying the Database**
+
+To verify that the database is running and populated with tables:
+
+```bash
+docker exec nova-db mariadb -unova_api -p nova -e "SHOW TABLES;"
+```
+
+You will be prompted to enter the password. If you're using custom credentials from your `.env` file, replace `nova_api` and `nova` with your actual username and database name.
+
 **Using MySQL/MariaDB Client from Host**
 
 If you have `mysql` or `mariadb` client installed on your host machine:
@@ -163,9 +173,9 @@ The nova-db schema includes comprehensive tables for managing:
 
 The Docker image is based on `mariadb:lts-noble` and includes:
 
+- Pre-seeded database using `init-database.sh` (runs during image build)
 - All SQL initialisation scripts from the `/sql` directory
-- Automated schema creation on first startup
-- Automated data seeding with initial records
+- Automated schema creation and data population
 - Health check configuration for monitoring
 
 ### Automated Publishing

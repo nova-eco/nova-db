@@ -16,6 +16,12 @@
       "options": {
         "parser": "sh"
       }
+    },
+    {
+      "files": ["scripts/**/*.sh"],
+      "options": {
+        "parser": "sh"
+      }
     }
   ],
   "plugins": ["prettier-plugin-sh", "prettier-plugin-sort-json", "prettier-plugin-sql"],
